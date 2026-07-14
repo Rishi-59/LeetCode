@@ -9,15 +9,28 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        stack = []
-        curr = head
-        while curr:
-            stack.append(curr.val)
-            curr = curr.next
 
-        curr = head
-        for i in range(len(stack)-1,-1,-1):
-            curr.val = stack.pop()
-            curr = curr.next
+        # stack = []
+        # curr = head
+        # while curr:
+        #     stack.append(curr.val)
+        #     curr = curr.next
+
+        # curr = head
+        # for i in range(len(stack)-1,-1,-1):
+        #     curr.val = stack.pop()
+        #     curr = curr.next
         
+        # return head
+
+        prev = None
+        temp = head
+
+        while temp:
+            front = temp.next
+            temp.next = prev
+            prev = temp
+            temp = front
+
+        head = prev
         return head
