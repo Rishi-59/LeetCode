@@ -9,7 +9,7 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-
+        # -----------Extra Memory
         # stack = []
         # curr = head
         # while curr:
@@ -23,14 +23,28 @@ class Solution(object):
         
         # return head
 
-        prev = None
-        temp = head
+        # -----------Iterative
+        # prev = None
+        # temp = head
 
-        while temp:
-            front = temp.next
-            temp.next = prev
-            prev = temp
-            temp = front
+        # while temp:
+        #     front = temp.next
+        #     temp.next = prev
+        #     prev = temp
+        #     temp = front
 
-        head = prev
-        return head
+        # head = prev
+        # return head
+
+        # -----------Recursion
+        def reverse(head):
+            if not head or head.next == None:
+                return head
+            newHead = reverse(head.next)
+            front = head.next
+            front.next = head
+            head.next = None
+            return newHead
+
+        return reverse(head)
+        
