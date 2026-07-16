@@ -12,7 +12,7 @@ class Solution(object):
         """
 
         if not root:
-            return None
+            return 
         
         temp = root.left
         root.left = root.right
