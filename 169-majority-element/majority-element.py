@@ -6,8 +6,9 @@ class Solution:
         count = 0
         for num in nums:
             if count == 0:
+                count += 1
                 el = num
-            if num == el:
+            elif num == el:
                 count += 1
             else:
                 count -= 1
