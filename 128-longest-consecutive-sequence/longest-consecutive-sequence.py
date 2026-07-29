@@ -6,9 +6,7 @@ class Solution:
             return 0
 
         l = 1
-        st = set()
-        for i in nums:
-            st.add(i)
+        st = set(nums)
 
         for i in st:
 
