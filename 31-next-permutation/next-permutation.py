@@ -10,18 +10,19 @@ class Solution:
             if nums[i] < nums[i+1]:
                 bp = i
                 break
-
-        if bp is None:
+        
+        if bp == None:
             return nums.reverse()
 
         for i in range(n-1,-1,-1):
             if nums[i] > nums[bp]:
-                nums[i] , nums[bp] = nums[bp] , nums[i]  
+                nums[i] , nums[bp] = nums[bp] , nums[i]
                 break
         
-        l , r = bp+1, n-1
+        l = bp + 1
+        r = n - 1
         while l < r:
-            nums[l] ,nums[r] = nums[r], nums[l]
+            nums[l] , nums[r] = nums[r] , nums[l]
             l += 1
             r -= 1
         
