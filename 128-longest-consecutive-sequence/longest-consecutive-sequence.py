@@ -8,11 +8,9 @@ class Solution:
             if i - 1 not in st:
                 
                 ct = 1
-                x = i
 
-                while x + 1 in st:
+                while i + ct in st:
                     ct += 1
-                    x += 1
                 
                 l = max(l,ct)
         
