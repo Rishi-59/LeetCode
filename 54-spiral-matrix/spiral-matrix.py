@@ -7,18 +7,16 @@ class Solution:
         l , r = 0 , m - 1
         t , b = 0 , n - 1
 
-        while l <= r or t <= b:
-            if t <= b:
-                # l -> r
-                for i in range(l,r + 1):
-                    sp.append(matrix[t][i])
-                t += 1
+        while l <= r and t <= b:
+            # l -> r
+            for i in range(l,r + 1):
+                sp.append(matrix[t][i])
+            t += 1
 
-            if l <= r:
-                # t -> b
-                for i in range(t,b + 1):
-                    sp.append(matrix[i][r])
-                r -= 1
+            # t -> b
+            for i in range(t,b + 1):
+                sp.append(matrix[i][r])
+            r -= 1
 
             if t <= b:
                 # r -> l
