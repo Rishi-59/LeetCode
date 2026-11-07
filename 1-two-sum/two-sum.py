@@ -1,12 +1,9 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        visited = []
-        for i in range(len(nums)):
-            tar = target - nums[i]
-            if tar in visited:
-                return [visited.index(tar),i]
-            else:
-                visited.append(nums[i])
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        visited = {}
+        for i, v in enumerate(nums):
+            if target - v in visited.keys():
+                return [visited[target - v], i]
+            visited[v] = i
+            # print(visited)
         
-
-            
