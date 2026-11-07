@@ -5,11 +5,7 @@ class Solution:
         for word in strs:
             freq = tuple(sorted(Counter(word).items()))
             freq_table[freq].append(word)
-        
-        ans = []
-        for key, val in freq_table.items():
-            ans.append(val)
 
-        return ans
+        return [val for val in freq_table.values()]
             
             
