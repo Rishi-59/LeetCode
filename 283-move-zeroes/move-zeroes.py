@@ -3,7 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        if 0 not in nums:
+        if 0 not in set(nums):
             return 
         
         s = 0
