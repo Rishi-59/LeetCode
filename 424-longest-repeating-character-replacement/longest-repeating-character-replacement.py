@@ -6,9 +6,9 @@ class Solution:
         max_l = 0
         l,r = 0, 0
         def update_max_f():
-            max_l = 0
+            max_f = 0
             for i in freq.values():
-                max_l = max(max_l,i)
+                max_f = max(max_f,i)
             
         while r < len(s):
             freq[s[r]] += 1
