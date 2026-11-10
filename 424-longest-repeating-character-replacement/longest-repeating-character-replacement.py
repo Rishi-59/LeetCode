@@ -1,23 +1,21 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        from collections import defaultdict
-        freq = defaultdict(int)
+        freq = {}
         max_f = 0
-        max_l = 0
-        l,r = 0, 0
-            
-        while r < len(s):
-            freq[s[r]] += 1
-            max_f = max(freq[s[r]],max_f)
-            changes = r-l + 1 - max_f
-            if changes > k :
+        ans = 0
+        l = 0
+        for r in range(len(s)):
+            freq[s[r]] = freq.get(s[r], 0) + 1
+            if max_f < freq[s[r]]:
+                max_f = freq[s[r]]
+
+            w = r - l + 1
+            changes = w - max_f
+            if changes > k:
                 freq[s[l]] -= 1
                 l += 1
 
-            if changes <= k:
-                max_l = max(max_l,r-l+1)
-            r += 1
+            elif ans < w:
+                ans = w
 
-        return max_l
-
-            
+        return ans
