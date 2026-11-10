@@ -4,17 +4,15 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         if 0 not in nums:
-            return
-
-        i = 0
-        while True:
-            if nums[i] == 0:
-                break
-            i += 1
-
-        for j in range(i,len(nums)):
-            if nums[j] != 0 :
-                nums[i] , nums[j] = nums[j] , nums[i]
-                i += 1 
+            return 
         
+        s = 0
+
+        for f in range(len(nums)):
+            if nums[f] != 0:
+                nums[s] , nums[f] = nums[f], nums[s]
+                s+=1
+
         return
+        
+
