@@ -14,26 +14,44 @@ class Solution:
         if root:
             queue.append(root)
         
-        l_node = 1
+        l_node = len(queue)
 
         while queue:
-            cl_node = 0
             while l_node > 0:
                 curr = queue.popleft()
                 l_result.append(curr.val)
+                
                 if curr.left:
-                    cl_node += 1
                     queue.append(curr.left)
                 
                 if curr.right:
-                    cl_node += 1
                     queue.append(curr.right)
                 
                 l_node -= 1
             
-            l_node = cl_node
+            l_node = len(queue)
             result.append(l_result)
             l_result = []
+
+        # while queue:
+        #     cl_node = 0
+        #     while l_node > 0:
+        #         curr = queue.popleft()
+        #         l_result.append(curr.val)
+        #         if curr.left:
+        #             cl_node += 1
+        #             queue.append(curr.left)
+                
+        #         if curr.right:
+        #             cl_node += 1
+        #             queue.append(curr.right)
+                
+        #         l_node -= 1
+            
+        #     l_node = cl_node
+        #     result.append(l_result)
+        #     l_result = []
         
+
         return result
                 
